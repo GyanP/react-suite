@@ -1,0 +1,27 @@
+[
+  {
+    "key": "home",
+    "value": "Home",
+    "icon": "home"
+  },
+  {
+    "key": "solutions",
+    "value": "Solutions",
+    "icon": ""
+  },
+  {
+    "key": "products",
+    "value": "Products",
+    "icon": ""
+  },
+  {
+    "key": "aboutUs",
+    "value": "About Us",
+    "icon": ""
+  },
+  {
+    "key": "contactUs",
+    "value": "Contact Us",
+    "icon": ""
+  }
+]
