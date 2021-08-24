@@ -1,18 +1,15 @@
 import { Container } from 'rsuite';
-import Header from './component/Header';
+
+import DataDisplay from './component/dataDisplay';
+import Header from './component/header';
 
 const App = () => {
   return (
     <div className='App'>
       <div className='show-container'>
         <Container>
-          {/*
-          -------------------- 
-            Header component
-          -------------------
-          */}
-          <Header />
-          <Container></Container>
+          <Header /> {/* Header component */}
+          <DataDisplay /> {/* Inner body component */}
         </Container>
       </div>
     </div>

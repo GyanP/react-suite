@@ -1,0 +1,32 @@
+[
+  {
+    "key": "Data USA",
+    "name": "US public data",
+    "url": "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
+  },
+  {
+    "key": "Agify.io",
+    "name": "Predict age based on a name",
+    "url": "https://api.agify.io/?name=bella&name=john&name=rohn&name=cristiano&name=smith"
+  },
+  {
+    "Key": "Open Brewery DB",
+    "name": "Breweries",
+    "url": "https://api.openbrewerydb.org/breweries"
+  },
+  {
+    "key": "openFDA",
+    "name": "Federal Drug Administration data",
+    "url": "https://api.fda.gov/food/enforcement.json?limit=10"
+  },
+  {
+    "key": "Makeup",
+    "name": "Makeup brands and product info",
+    "url": "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline"
+  },
+  {
+    "key": "Jokes",
+    "name": "Jokes",
+    "url": "https://official-joke-api.appspot.com/jokes/ten"
+  }
+]

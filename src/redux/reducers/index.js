@@ -13,6 +13,30 @@ export const suiteReducer = handleActions(
       ...state,
       navItem: action.payload,
     }),
+
+    [Actions.REQUEST_DISPLAY_DATA_ITEM]: (
+      state = suiteInitialStates,
+      action
+    ) => ({
+      ...state,
+      displayDataItem: [],
+    }),
+    [Actions.DISPLAY_DATA_ITEM_SUCCESS]: (
+      state = suiteInitialStates,
+      action
+    ) => ({
+      ...state,
+      displayDataItem: action.payload,
+    }),
+
+    [Actions.REQUEST_DATA_FROM_API]: (state = suiteInitialStates, action) => ({
+      ...state,
+      apiData: [],
+    }),
+    [Actions.DATA_FROM_API_SUCCESS]: (state = suiteInitialStates, action) => ({
+      ...state,
+      apiData: action.payload,
+    }),
   },
   suiteInitialStates
 );

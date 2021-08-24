@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { requestNavItem } from './../../redux/actions';
-import HeaderForm from './HeaderForm';
+import { requestNavItem } from '../../redux/actions';
+import HeaderNav from './HeaderNav';
 
 const Header = () => {
   // States
   const [activeNav, setActiveNav] = useState('home');
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,17 +17,13 @@ const Header = () => {
   const reducerData = useSelector((state) => state.suiteReducer);
   const { navItem = [] } = reducerData;
 
-  /*
-  -----------------------------------
-    Function to manage nav selection
-  -----------------------------------
-  */
+  //    Function to manage nav selection
   const onHandleSelect = (activeKey) => {
     setActiveNav(activeKey);
   };
 
   return (
-    <HeaderForm
+    <HeaderNav
       onHandleSelect={onHandleSelect}
       navItem={navItem}
       activeNav={activeNav}
