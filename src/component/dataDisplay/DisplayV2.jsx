@@ -19,7 +19,9 @@ const DisplayV2 = ({ apiData, isLoading }) => {
                 !['openfda', 'product_colors'].includes(itemKey) ? (
                   <List.Item key={index + itemIndex} index={index + itemIndex}>
                     <div className='list-item-wrap'>
-                      <h6 className='head'>{itemKey} : </h6>
+                      <h6 className='head'>
+                        {itemKey.replaceAll('_', '  ')} :{' '}
+                      </h6>
                       <div className='head-value'>{item[itemKey]} </div>
                     </div>
                   </List.Item>

@@ -71,7 +71,7 @@ const DataDisplay = () => {
         </FlexboxGrid.Item>
       </FlexboxGrid>
 
-      {activeDisplay ? (
+      {activeKeyValue === '' ? null : activeDisplay ? (
         <DisplayV1 apiData={apiData} isLoading={isLoading} /> /* v1 ui */
       ) : (
         <DisplayV2 apiData={apiData} isLoading={isLoading} /> /* v2 ui */
