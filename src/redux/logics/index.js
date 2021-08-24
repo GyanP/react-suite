@@ -36,23 +36,30 @@ const dataFromApiRequestLogic = createLogic({
       action: { payload },
     } = data;
     const { url } = dataDisplayItem.find((item) => item.key === payload); // getting item by key
-    const { status, data: result } = await axios.get(url); // dynamic api calling
-    if (status === 200) {
-      switch (payload) {
-        case 'Data USA':
-          dispatch(dataFromApiSuccess(result.data)); // update data into reducer
-          break;
-        case 'openFDA':
-          dispatch(dataFromApiSuccess(result.results)); // update data into reducer
-          break;
-        default:
-          dispatch(dataFromApiSuccess(result)); // update data into reducer
-          break;
+    try {
+      const { status, data: result } = await axios.get(url); // dynamic api calling
+      if (status === 200) {
+        switch (payload) {
+          case 'Data USA':
+            dispatch(dataFromApiSuccess(result.data)); // update data into reducer
+            done();
+            break;
+          case 'openFDA':
+            dispatch(dataFromApiSuccess(result.results)); // update data into reducer
+            done();
+            break;
+          default:
+            dispatch(dataFromApiSuccess(result)); // update data into reducer
+            done();
+            break;
+        }
+      } else {
+        Alert.error('Data not found'); // execute if data not fetch from api
+        done();
       }
-    } else {
-      Alert.error('Data not found'); // execute if data not fetch from api
+    } catch (error) {
+      console.log('Api error', error);
     }
-    done();
   },
 });
 

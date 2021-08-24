@@ -18,13 +18,13 @@ const Header = () => {
   const { navItem = [] } = reducerData;
 
   //    Function to manage nav selection
-  const onHandleSelect = (activeKey) => {
+  const onHandleNavSelect = (activeKey) => {
     setActiveNav(activeKey);
   };
 
   return (
     <HeaderNav
-      onHandleSelect={onHandleSelect}
+      onHandleSelect={onHandleNavSelect}
       navItem={navItem}
       activeNav={activeNav}
     />
