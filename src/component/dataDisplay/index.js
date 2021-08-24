@@ -24,7 +24,7 @@ const DataDisplay = () => {
 
   // selectors
   const reducerData = useSelector((state) => state.suiteReducer);
-  const { displayDataItem = [], apiData = [] } = reducerData;
+  const { displayDataItem = [], apiData = [], isLoading } = reducerData;
 
   //  Function to manage display data item selection
   const onHandleMenuSelect = async (activeKey) => {
@@ -72,9 +72,9 @@ const DataDisplay = () => {
       </FlexboxGrid>
 
       {activeDisplay ? (
-        <DisplayV1 apiData={apiData} /> /* v1 ui */
+        <DisplayV1 apiData={apiData} isLoading={isLoading} /> /* v1 ui */
       ) : (
-        <DisplayV2 apiData={apiData} /> /* v2 ui */
+        <DisplayV2 apiData={apiData} isLoading={isLoading} /> /* v2 ui */
       )}
     </Container>
   );

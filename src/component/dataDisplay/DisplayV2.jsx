@@ -1,12 +1,17 @@
-import { Carousel, List } from 'rsuite';
+import { Carousel, List, Loader, Placeholder } from 'rsuite';
+const { Paragraph } = Placeholder;
 
-const DisplayV2 = ({ apiData }) => {
+const DisplayV2 = ({ apiData, isLoading }) => {
   let keys = [];
   if (apiData && apiData[0]) keys = Object.keys(apiData[0]);
 
   return (
     <div>
-      {apiData && apiData.length > 0 ? (
+      {isLoading ? (
+        <Paragraph rows={8} className='custom-slider'>
+          <Loader center content='loading' />
+        </Paragraph>
+      ) : apiData && apiData.length > 0 ? (
         <Carousel className='custom-slider' shape='bar'>
           {apiData.map((item, index) => (
             <List autoScroll bordered hover key={index}>

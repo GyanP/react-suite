@@ -32,10 +32,12 @@ export const suiteReducer = handleActions(
     [Actions.REQUEST_DATA_FROM_API]: (state = suiteInitialStates, action) => ({
       ...state,
       apiData: [],
+      isLoading: true,
     }),
     [Actions.DATA_FROM_API_SUCCESS]: (state = suiteInitialStates, action) => ({
       ...state,
       apiData: action.payload,
+      isLoading: false,
     }),
   },
   suiteInitialStates
